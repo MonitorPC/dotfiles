@@ -1,0 +1,23 @@
+|lab
+pin_name4 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+pin_name1 => inst15.IN0
+pin_name2 => inst9.IN0
+pin_name2 => inst10.IN0
+pin_name2 => inst2.IN1
+pin_name2 => inst3.IN1
+pin_name3 => inst7.IN0
+pin_name3 => inst1.IN2
+pin_name3 => inst8.IN0
+pin_name3 => inst3.IN2
+pin_name5 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+pin_name6 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+pin_name7 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+pin_name12 <= inst17.DB_MAX_OUTPUT_PORT_TYPE
+pin_name10 => inst17.IN0
+pin_name10 => inst19.IN0
+pin_name9 => inst17.IN1
+pin_name13 <= inst18.DB_MAX_OUTPUT_PORT_TYPE
+pin_name11 => inst20.IN0
+pin_name8 => ~NO_FANOUT~
+
+

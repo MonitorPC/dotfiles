@@ -1,0 +1,13 @@
+|encoder
+i_1 => q_1.IN1
+i_1 => q_1.OUTPUTSELECT
+i_1 => comb.IN1
+i_1 => comb.IN1
+i_2 => q_1.IN0
+i_2 => q_1.DATAA
+i_3 => q_1.IN1
+i_4 => ~NO_FANOUT~
+q_1 << q_1$latch.DB_MAX_OUTPUT_PORT_TYPE
+q_2 << q_2$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
