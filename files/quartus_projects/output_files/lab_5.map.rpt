@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab_5
-Fri Nov 11 19:59:46 2022
+Sat Nov 19 07:24:14 2022
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -13,8 +13,8 @@ Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. User-Specified and Inferred Latches
-  9. General Register Statistics
+  8. General Register Statistics
+  9. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
  10. Post-Synthesis Netlist Statistics for Top Partition
  11. Elapsed Time Per Partition
  12. Analysis & Synthesis Messages
@@ -44,16 +44,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Nov 11 19:59:46 2022       ;
+; Analysis & Synthesis Status        ; Successful - Sat Nov 19 07:24:14 2022       ;
 ; Quartus Prime Version              ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
 ; Revision Name                      ; lab_5                                       ;
-; Top-level Entity Name              ; encoder                                     ;
+; Top-level Entity Name              ; adder                                       ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 4                                           ;
-;     Total combinational functions  ; 4                                           ;
+; Total logic elements               ; 7                                           ;
+;     Total combinational functions  ; 7                                           ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
-; Total pins                         ; 6                                           ;
+; Total pins                         ; 13                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE6E22C8        ;                    ;
-; Top-level entity name                                            ; encoder            ; lab_5              ;
+; Top-level entity name                                            ; adder              ; lab_5              ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -163,45 +163,53 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                          ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path            ; Library ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------+---------+
-; encoder.v                        ; yes             ; User Verilog HDL File  ; /home/carrot/quartus_projects/encoder.v ;         ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                            ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------+---------+
+; adder.v                          ; yes             ; User Verilog HDL File        ; /home/carrot/dotfiles/files/quartus_projects/adder.v                    ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; /opt/intelFPGA/21.1/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; /opt/intelFPGA/21.1/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; /opt/intelFPGA/21.1/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal211.inc                   ; yes             ; Megafunction                 ; /opt/intelFPGA/21.1/quartus/libraries/megafunctions/aglobal211.inc      ;         ;
+; db/lpm_divide_c9m.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/carrot/dotfiles/files/quartus_projects/db/lpm_divide_c9m.tdf      ;         ;
+; db/sign_div_unsign_1kh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/carrot/dotfiles/files/quartus_projects/db/sign_div_unsign_1kh.tdf ;         ;
+; db/alt_u_div_m3f.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/carrot/dotfiles/files/quartus_projects/db/alt_u_div_m3f.tdf       ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/carrot/dotfiles/files/quartus_projects/db/add_sub_7pc.tdf         ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Estimated Total logic elements              ; 4     ;
-;                                             ;       ;
-; Total combinational functions               ; 4     ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 0     ;
-;     -- 3 input functions                    ; 2     ;
-;     -- <=2 input functions                  ; 2     ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 4     ;
-;     -- arithmetic mode                      ; 0     ;
-;                                             ;       ;
-; Total registers                             ; 0     ;
-;     -- Dedicated logic registers            ; 0     ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 6     ;
-;                                             ;       ;
-; Embedded Multiplier 9-bit elements          ; 0     ;
-;                                             ;       ;
-; Maximum fan-out node                        ; q_1~0 ;
-; Maximum fan-out                             ; 2     ;
-; Total fan-out                               ; 18    ;
-; Average fan-out                             ; 1.12  ;
-+---------------------------------------------+-------+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++---------------------------------------------+------------+
+; Resource                                    ; Usage      ;
++---------------------------------------------+------------+
+; Estimated Total logic elements              ; 7          ;
+;                                             ;            ;
+; Total combinational functions               ; 7          ;
+; Logic element usage by number of LUT inputs ;            ;
+;     -- 4 input functions                    ; 2          ;
+;     -- 3 input functions                    ; 4          ;
+;     -- <=2 input functions                  ; 1          ;
+;                                             ;            ;
+; Logic elements by mode                      ;            ;
+;     -- normal mode                          ; 7          ;
+;     -- arithmetic mode                      ; 0          ;
+;                                             ;            ;
+; Total registers                             ; 0          ;
+;     -- Dedicated logic registers            ; 0          ;
+;     -- I/O registers                        ; 0          ;
+;                                             ;            ;
+; I/O pins                                    ; 13         ;
+;                                             ;            ;
+; Embedded Multiplier 9-bit elements          ; 0          ;
+;                                             ;            ;
+; Maximum fan-out node                        ; a[0]~input ;
+; Maximum fan-out                             ; 3          ;
+; Total fan-out                               ; 40         ;
+; Average fan-out                             ; 1.21       ;
++---------------------------------------------+------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -209,21 +217,9 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |encoder                   ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 6    ; 0            ; |encoder            ; encoder     ; work         ;
+; |adder                     ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 13   ; 0            ; |adder              ; adder       ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+---------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                               ;
-+----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
-+----------------------------------------------------+---------------------+------------------------+
-; q_1$latch                                          ; GND                 ; yes                    ;
-; q_2$latch                                          ; GND                 ; yes                    ;
-; Number of user-specified and inferred latches = 2  ;                     ;                        ;
-+----------------------------------------------------+---------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -241,19 +237,43 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 
 
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 1              ; Untyped                ;
+; LPM_WIDTHD             ; 1              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_c9m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 6                           ;
-; cycloneiii_lcell_comb ; 4                           ;
-;     normal            ; 4                           ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 2                           ;
+; boundary_port         ; 13                          ;
+; cycloneiii_lcell_comb ; 7                           ;
+;     normal            ; 7                           ;
+;         2 data inputs ; 1                           ;
+;         3 data inputs ; 4                           ;
+;         4 data inputs ; 2                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.78                        ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 2.27                        ;
 +-----------------------+-----------------------------+
 
 
@@ -272,7 +292,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
-    Info: Processing started: Fri Nov 11 19:59:34 2022
+    Info: Processing started: Sat Nov 19 07:24:02 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab_5 -c lab_5
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -281,30 +301,42 @@ Info (12021): Found 1 design units, including 1 entities, in source file lab_5.b
 Info (12021): Found 1 design units, including 1 entities, in source file Block2.bdf
     Info (12023): Found entity 1: Block2
 Info (12021): Found 1 design units, including 1 entities, in source file dem.v
-    Info (12023): Found entity 1: dem File: /home/carrot/quartus_projects/dem.v Line: 1
-Warning (12090): Entity "mux" obtained from "output_files/mux.v" instead of from Quartus Prime megafunction library File: /home/carrot/quartus_projects/output_files/mux.v Line: 1
+    Info (12023): Found entity 1: dem File: /home/carrot/dotfiles/files/quartus_projects/dem.v Line: 1
+Warning (12090): Entity "mux" obtained from "output_files/mux.v" instead of from Quartus Prime megafunction library File: /home/carrot/dotfiles/files/quartus_projects/output_files/mux.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file output_files/mux.v
-    Info (12023): Found entity 1: mux File: /home/carrot/quartus_projects/output_files/mux.v Line: 1
+    Info (12023): Found entity 1: mux File: /home/carrot/dotfiles/files/quartus_projects/output_files/mux.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file encoder.v
-    Info (12023): Found entity 1: encoder File: /home/carrot/quartus_projects/encoder.v Line: 1
-Info (12127): Elaborating entity "encoder" for the top level hierarchy
-Warning (10240): Verilog HDL Always Construct warning at encoder.v(8): inferring latch(es) for variable "q_1", which holds its previous value in one or more paths through the always construct File: /home/carrot/quartus_projects/encoder.v Line: 8
-Warning (10240): Verilog HDL Always Construct warning at encoder.v(8): inferring latch(es) for variable "q_2", which holds its previous value in one or more paths through the always construct File: /home/carrot/quartus_projects/encoder.v Line: 8
-Info (10041): Inferred latch for "q_2" at encoder.v(13) File: /home/carrot/quartus_projects/encoder.v Line: 13
-Info (10041): Inferred latch for "q_1" at encoder.v(13) File: /home/carrot/quartus_projects/encoder.v Line: 13
+    Info (12023): Found entity 1: encoder File: /home/carrot/dotfiles/files/quartus_projects/encoder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file adder.v
+    Info (12023): Found entity 1: adder File: /home/carrot/dotfiles/files/quartus_projects/adder.v Line: 1
+Info (12127): Elaborating entity "adder" for the top level hierarchy
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: /home/carrot/dotfiles/files/quartus_projects/adder.v Line: 12
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: /home/carrot/dotfiles/files/quartus_projects/adder.v Line: 12
+Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: /home/carrot/dotfiles/files/quartus_projects/adder.v Line: 12
+    Info (12134): Parameter "LPM_WIDTHN" = "1"
+    Info (12134): Parameter "LPM_WIDTHD" = "1"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_c9m.tdf
+    Info (12023): Found entity 1: lpm_divide_c9m File: /home/carrot/dotfiles/files/quartus_projects/db/lpm_divide_c9m.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_1kh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_1kh File: /home/carrot/dotfiles/files/quartus_projects/db/sign_div_unsign_1kh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_m3f.tdf
+    Info (12023): Found entity 1: alt_u_div_m3f File: /home/carrot/dotfiles/files/quartus_projects/db/alt_u_div_m3f.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info (12023): Found entity 1: add_sub_7pc File: /home/carrot/dotfiles/files/quartus_projects/db/add_sub_7pc.tdf Line: 23
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "i_4" File: /home/carrot/quartus_projects/encoder.v Line: 3
-Info (21057): Implemented 10 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 4 input pins
-    Info (21059): Implemented 2 output pins
-    Info (21061): Implemented 4 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 381 megabytes
-    Info: Processing ended: Fri Nov 11 19:59:46 2022
+Info (21057): Implemented 20 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
+    Info (21059): Implemented 5 output pins
+    Info (21061): Implemented 7 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 377 megabytes
+    Info: Processing ended: Sat Nov 19 07:24:14 2022
     Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:28
+    Info: Total CPU time (on all processors): 00:00:30
 
 

@@ -4,23 +4,55 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "q_1",
+					"name" : "q[0]",
 					"strict" : false
 				},
 				{
-					"name" : "q_2",
+					"name" : "q[1]",
 					"strict" : false
 				},
 				{
-					"name" : "i_1",
+					"name" : "q[2]",
 					"strict" : false
 				},
 				{
-					"name" : "i_2",
+					"name" : "q[3]",
 					"strict" : false
 				},
 				{
-					"name" : "i_3",
+					"name" : "q[4]",
+					"strict" : false
+				},
+				{
+					"name" : "a[0]",
+					"strict" : false
+				},
+				{
+					"name" : "b[0]",
+					"strict" : false
+				},
+				{
+					"name" : "a[1]",
+					"strict" : false
+				},
+				{
+					"name" : "b[1]",
+					"strict" : false
+				},
+				{
+					"name" : "a[2]",
+					"strict" : false
+				},
+				{
+					"name" : "b[2]",
+					"strict" : false
+				},
+				{
+					"name" : "b[3]",
+					"strict" : false
+				},
+				{
+					"name" : "a[3]",
 					"strict" : false
 				}
 			]

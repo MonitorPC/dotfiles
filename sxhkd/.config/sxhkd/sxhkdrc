@@ -2,6 +2,10 @@
 # wm independent hotkeys
 #
 
+# rofi
+super + t
+  rofi -show drun
+  
 # terminal emulator
 super + Return
   kitty	

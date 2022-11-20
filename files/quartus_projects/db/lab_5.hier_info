@@ -1,13 +1,30 @@
-|encoder
-i_1 => q_1.IN1
-i_1 => q_1.OUTPUTSELECT
-i_1 => comb.IN1
-i_1 => comb.IN1
-i_2 => q_1.IN0
-i_2 => q_1.DATAA
-i_3 => q_1.IN1
-i_4 => ~NO_FANOUT~
-q_1 << q_1$latch.DB_MAX_OUTPUT_PORT_TYPE
-q_2 << q_2$latch.DB_MAX_OUTPUT_PORT_TYPE
+|adder
+a[0] => q.IN0
+a[0] => q.IN0
+a[1] => q.IN0
+a[1] => q.IN0
+a[1] => q.IN1
+a[2] => q.IN0
+a[2] => q.IN0
+a[2] => q.IN1
+a[3] => q.IN0
+a[3] => Mod0.IN0
+a[3] => q.IN1
+b[0] => q.IN1
+b[0] => q.IN1
+b[1] => q.IN1
+b[1] => q.IN1
+b[1] => q.IN1
+b[2] => q.IN1
+b[2] => q.IN1
+b[2] => q.IN1
+b[3] => q.IN1
+b[3] => Mod0.IN1
+b[3] => q.IN1
+q[0] << q.DB_MAX_OUTPUT_PORT_TYPE
+q[1] << q.DB_MAX_OUTPUT_PORT_TYPE
+q[2] << q.DB_MAX_OUTPUT_PORT_TYPE
+q[3] << q.DB_MAX_OUTPUT_PORT_TYPE
+q[4] << q.DB_MAX_OUTPUT_PORT_TYPE
 
 
